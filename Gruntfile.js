@@ -75,6 +75,10 @@ module.exports = function(grunt) {
 			}
 		},
 
+		jshint: {
+			files: ['js/global.js']
+		},
+
 		sass: {
 			dist: {
 				options: {
@@ -95,8 +99,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-sass');
-
+	grunt.loadNpmTasks('grunt-contrib-jshint');
 
 	//4. The Default "Grunt"
-	grunt.registerTask('default', ['concat', 'uglify', 'imagemin']);
+	grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'imagemin']);
 };
