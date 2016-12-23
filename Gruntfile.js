@@ -1,13 +1,5 @@
 // Gruntfile for Udacity Portfolio
 // Grey Grissom 21 Dec 2016
-
-
-var javascriptLibraries = [];
-var cssLibraries = [];
-
-
-
-
 module.exports = function(grunt) {
 
 
@@ -15,6 +7,13 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
+		autoprefixer: {
+			dist: {
+				files: {
+					'css/main_built.css': 'raw/styles/main.css'
+				}
+			}
+			},
 		concat:  {
 			//2. Configuration for concatenating javascript files
 			options: {
@@ -27,17 +26,17 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				src: [
-					'js/libs/*.js', // All 3rd party jS libraries
-					'js/global.js' // custom utility js file
+					'vendor/scripts/*.js', // All 3rd party jS libraries
+					'raw/scripts/*.js' // custom utility js file
 				],
-				dest: 'js/build/production.js',
+				dest: 'raw/scripts/build/production.js',
 			}
 		},
 
 		uglify: {
 			build: {
-				src: 'js/build/production.js',
-				dest: 'js/build/production.min.js'
+				src: 'raw/scripts/build/production.js',
+				dest: 'js/production.min.js'
 			}
 		},
 
@@ -57,26 +56,25 @@ module.exports = function(grunt) {
 			options: {
 				livereload: true,
 				},
-
-			scripts: {
-				files: ['js/*.js'],
-				tasks: ['concat', 'uglify'],
-				options: {
-					spawn: false,
-				},
-
-			css: {
-				files: ['css/*.scss'],
-				tasks: ['sass'],
+			styles: {
+				files: ['raw/styles/main.css', 'raw/styles/*.scss'],
+				tasks: ['autoprefixer', 'sass'],
 				options: {
 					spawn: false
 				}
-			}
+			},
+
+			scripts: {
+				files: ['raw/scripts/*.js'],
+				tasks: ['jshint', 'concat', 'uglify'],
+				options: {
+					spawn: false,
+				},
 			}
 		},
 
 		jshint: {
-			files: ['js/global.js']
+			files: ['raw/scripts/*.js']
 		},
 
 		sass: {
@@ -85,7 +83,7 @@ module.exports = function(grunt) {
 					style: 'compressed'
 				},
 				files: {
-					'css/build/global.css' : 'css/global.scss'
+					'css/main_built.css' : 'raw/styles/*.scss'
 				}
 			}
 		}
@@ -100,7 +98,15 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-autoprefixer');
+	grunt.loadNpmTasks('grunt-menu');
 
+
+	grunt.registerTask('js', ['grunt-contrib-jshint', 'grunt-contrib-concat', 'grunt-contrib-uglify']);
 	//4. The Default "Grunt"
-	grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'imagemin']);
+	grunt.registerTask('default', ['autoprefixer', 'jshint', 'concat', 'uglify', 'imagemin']);
 };
+
+
+
+
