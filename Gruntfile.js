@@ -57,7 +57,7 @@ module.exports = function(grunt) {
 				livereload: true,
 				},
 			styles: {
-				files: ['raw/styles/main.css', 'raw/styles/*.scss'],
+				files: ['raw/styles/main.css', 'vendor/styles/mixins/*.scss', 'vendor/styles/*.scss'],
 				tasks: ['autoprefixer', 'sass'],
 				options: {
 					spawn: false
@@ -83,7 +83,7 @@ module.exports = function(grunt) {
 					style: 'compressed'
 				},
 				files: {
-					'css/main_built.css' : 'raw/styles/*.scss'
+					'css/main_built.css' : 'vendor/styles/pre-processed.scss'
 				}
 			}
 		}
@@ -104,7 +104,7 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('js', ['grunt-contrib-jshint', 'grunt-contrib-concat', 'grunt-contrib-uglify']);
 	//4. The Default "Grunt"
-	grunt.registerTask('default', ['autoprefixer', 'jshint', 'concat', 'uglify', 'imagemin']);
+	grunt.registerTask('default', ['sass', 'jshint', 'concat', 'uglify', 'imagemin']);
 };
 
 
