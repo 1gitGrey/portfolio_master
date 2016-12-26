@@ -50,6 +50,11 @@ module.exports = function(grunt) {
 					}]
 			}
 		},
+    wiredep: {
+      target: {
+        src: 'index.html' // point to html document
+      }
+    },
 
 		watch: {
 
