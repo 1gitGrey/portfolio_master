@@ -279,10 +279,7 @@ sans-serif;
   outline: none;
 }
 
-#header-bg {
 
-  background-image: url('http://placehold.it/1000');
-}
 header {
   position: relative;
   display: block;
@@ -507,28 +504,7 @@ sans-serif;
   -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
-.testimonials .testimonials-carousel .owl-controls .owl-prev:hover,
-.testimonials .testimonials-carousel .owl-controls .owl-next:hover {
-  opacity: 1;
-}
-.testimonials .testimonials-carousel .owl-controls .owl-prev {
-  left: 15px;
-}
-.testimonials .testimonials-carousel .owl-controls .owl-next {
-  right: 15px;
-}
-@media (min-width: 768px) {
-  .testimonials .testimonials-carousel .item {
-    padding: 0 100px;
-  }
-  .testimonials .testimonials-carousel .owl-controls .owl-prev,
-  .testimonials .testimonials-carousel .owl-controls .owl-next {
-    display: block;
-  }
-}
-.cta-form h3 {
-  margin-top: 0;
-}
+
 .about-content {
   padding: 30px;
 }
@@ -608,32 +584,7 @@ sans-serif;
 .about-carousel .owl-controls .owl-next {
   right: 15px;
 }
-.services .media {
-  margin-bottom: 30px;
-}
-.services .media i.fa {
-  height: 75px;
-  width: 75px;
-  line-height: 70px;
-  text-align: center;
-  border: 3px solid #222;
-  border-radius: 100%;
-  font-size: 30px;
-}
-.services .media .media-body {
-  min-width: none;
-  padding-left: 15px;
-}
-.services .media .media-body h3 {
-  margin-bottom: 15px;
-}
-.services .media .media-body ul {
-  list-style: inside;
-  padding: 0;
-}
-.services .media .media-body ul li {
-  margin-bottom: 10px;
-}
+
 @media (min-width: 390px) {
   .services .media .media-body {
     min-width: 260px;
@@ -950,73 +901,7 @@ a.text-title {
     margin: 1%;
   }
 }
-.pricing {
-  color: white;
-  background-color: #222;
-  background: no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-}
-.pricing .pricing-item {
-  text-align: center;
-  background: white;
-  color: #222;
-  padding: 30px;
-  -webkit-box-shadow: 0px 0px 30px 5px rgba(34, 34, 34, 0.75);
-  -moz-box-shadow: 0px 0px 30px 5px rgba(34, 34, 34, 0.75);
-  box-shadow: 0px 0px 30px 5px rgba(34, 34, 34, 0.75);
-  z-index: 1;
-  margin-bottom: 30px;
-}
-.pricing .pricing-item h3 {
-  margin: 0;
-}
-.pricing .pricing-item hr {
-  max-width: 100px;
-}
-.pricing .pricing-item .price {
-  margin-bottom: 20px;
-}
-.pricing .pricing-item .price .number {
-  font-weight: 900;
-  font-size: 50px;
-}
-.pricing .pricing-item .price .number sup {
-  font-size: 30px;
-}
-.pricing .pricing-item .list-group-item {
-  border-radius: 0;
-}
-@media (min-width: 992px) {
-  .pricing {
-    background-attachment: scroll;
-  }
-  .pricing .pricing-item {
-    margin-bottom: 0;
-  }
-  .pricing .pricing-item.featured-first {
-    margin-right: -15px;
-    margin-top: 15px;
-  }
-  .pricing .pricing-item.featured {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    margin: 0;
-    padding: 45px 30px;
-  }
-  .pricing .pricing-item.featured-last {
-    margin-left: -15px;
-    margin-top: 15px;
-  }
-}
-@media (min-width: 1025px) {
-  .pricing {
-    background-attachment: fixed;
-  }
-}
+
 .floating-label-form-group {
   position: relative;
   margin-bottom: 0;
@@ -1183,30 +1068,8 @@ body.modern .about-carousel .owl-controls .owl-next,
 body.modern .testimonials .owl-controls .owl-next {
   line-height: 55px !important;
 }
-body.vintage {
-  font-family: "Cardo", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-}
-body.vintage h1,
-body.vintage h2,
-body.vintage h3,
-body.vintage h4,
-body.vintage h5,
-body.vintage h6,
-body.vintage .navbar-brand,
-body.vintage p.lead,
-body.vintage header .brand-name,
-body.vintage .portfolio-carousel .project-name,
-body.vintage .testimonials .testimonial-author .name {
-  font-family: "Sanchez", "Helvetica Neue", Helvetica, Arial, sans-serif
-!important;
-  font-weight: 400 !important;
-  text-transform: uppercase !important;
-}
-body.vintage .about-carousel .owl-controls .owl-prev,
-body.vintage .testimonials .owl-controls .owl-prev,
-body.vintage .about-carousel .owl-controls .owl-next,
-body.vintage .testimonials .owl-controls .owl-next {
-  line-height: 55px !important;
-}
 
+#header-bg {
+
+  background-image: url('images/backgrounds/bg-header.jpg');
+}
